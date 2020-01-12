@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:notes/providers/notes.dart';
-
-import 'note_item.dart';
+import 'package:notes/widgets/note_item.dart';
 
 class NotesList extends StatelessWidget {
   @override

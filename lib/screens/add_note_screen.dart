@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import 'package:notes/providers/notes.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'package:intl/intl.dart';
+import 'package:notes/providers/notes.dart';
 
 class AddNoteScreen extends StatefulWidget {
   static const routeName = "/add";

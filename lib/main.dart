@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notes/screens/add_note_screen.dart';
-import 'package:notes/providers/notes.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/homescreen.dart';
+import 'package:notes/screens/add_note_screen.dart';
+import 'package:notes/providers/notes.dart';
+import 'package:notes/screens/homescreen.dart';
 
 main() => runApp(MyApp());
 

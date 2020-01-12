@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:notes/screens/add_note_screen.dart';
 import 'package:notes/widgets/notes_list.dart';
-
 import 'package:notes/widgets/popup_menu.dart';
 
 class HomeScreen extends StatelessWidget {
