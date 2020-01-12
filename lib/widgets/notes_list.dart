@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'providers/notes.dart';
+
+import 'package:notes/providers/notes.dart';
 
 import 'note_item.dart';
 

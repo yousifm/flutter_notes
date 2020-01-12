@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notes/add_note_screen.dart';
-import 'package:notes/delete_dialog.dart';
+import 'package:notes/screens/add_note_screen.dart';
+import 'package:notes/dialogs/delete_dialog.dart';
 import 'package:provider/provider.dart';
 
-import 'providers/notes.dart';
+import 'package:notes/providers/notes.dart';
 
 class NoteItem extends StatelessWidget {
   final Note note;
