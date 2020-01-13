@@ -24,6 +24,8 @@ class Note {
 }
 
 class Notes with ChangeNotifier {
+  static const table = 'notes';
+
   List<Note> _notes;
   Database database;
   bool loading = true;
@@ -32,7 +34,7 @@ class Notes with ChangeNotifier {
     WidgetsFlutterBinding.ensureInitialized();
     database = await openDatabase("notes.db", onCreate: (db, version) {
       return db.execute(
-          "CREATE TABLE notes(id TEXT PRIMARY KEY, title TEXT, content TEXT, date INTEGER)");
+          "CREATE TABLE $table(id TEXT PRIMARY KEY, title TEXT, content TEXT, date INTEGER)");
     }, version: 1);
   }
 
@@ -66,7 +68,7 @@ class Notes with ChangeNotifier {
     _notes.add(note);
     notifyListeners();
 
-    database.insert("notes", note.values);
+    database.insert(table, note.values);
 
     return note.id;
   }
@@ -76,7 +78,7 @@ class Notes with ChangeNotifier {
 
     notifyListeners();
 
-    database.delete("notes", where: "id='$id'");
+    database.delete(table, where: "id='$id'");
   }
 
   String editNote(String id, String title, String content) {
@@ -91,7 +93,7 @@ class Notes with ChangeNotifier {
 
     notifyListeners();
 
-    database.update('notes', n.values, where: "id='$id'");
+    database.update(table, n.values, where: "id='$id'");
     return id;
   }
 }
