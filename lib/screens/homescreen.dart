@@ -24,7 +24,8 @@ class HomeScreen extends StatelessWidget {
           PopupMenu()
         ],
       ),
-      body: NotesList(),
+      body: Container(
+          color: Color.fromRGBO(240, 240, 240, 1), child: NotesList()),
     );
   }
 }

@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.amber),
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+      ),
       routes: {
         "/": (context) =>
             ChangeNotifierProvider.value(value: notes, child: HomeScreen()),
