@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,7 @@ class NoteItem extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Container(
           decoration: BoxDecoration(
-            color: Color.fromRGBO(240, 240, 240, 1),
+            color: Theme.of(context).backgroundColor,
             boxShadow: [
               BoxShadow(
                   blurRadius: 9, color: Colors.black12, offset: Offset(5, 5)),
@@ -41,7 +42,7 @@ class NoteItem extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey[700]),
+                        color: Colors.black87),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -51,10 +52,11 @@ class NoteItem extends StatelessWidget {
                   child: Container(
                     height: 25,
                     child: IconButton(
+                      alignment: Alignment.centerRight,
                       padding: EdgeInsets.all(0),
                       icon: Icon(Icons.delete),
                       iconSize: 25,
-                      color: Colors.grey,
+                      color: CupertinoColors.systemGrey,
                       onPressed: () {
                         showDialog(
                                 builder: (context) => DeleteDialog(),

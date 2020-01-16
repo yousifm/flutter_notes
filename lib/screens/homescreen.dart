@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:notes/screens/add_note_screen.dart';
 import 'package:notes/widgets/notes_list.dart';
@@ -11,21 +12,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColorLight,
+        titleSpacing: 25,
         title: Text("Notes"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
+            iconSize: 32,
             onPressed: () {
               Navigator.of(context)
                   .pushNamed(AddNoteScreen.routeName, arguments: null);
             },
           ),
-          PopupMenu()
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: PopupMenu(),
+          )
         ],
       ),
       body: Container(
-          color: Color.fromRGBO(240, 240, 240, 1), child: NotesList()),
+          color: Theme.of(context).backgroundColor, child: NotesList()),
     );
   }
 }

@@ -59,7 +59,6 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           readOnly: !editting,
           decoration: InputDecoration(labelText: "Title"),
         ),
-        backgroundColor: Theme.of(context).primaryColorLight,
       ),
       body: Column(
         children: [

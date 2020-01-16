@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,9 +14,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = CupertinoColors.systemGrey6;
+    final primaryColor = CupertinoColors.activeBlue;
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        backgroundColor: backgroundColor,
+        appBarTheme: AppBarTheme(
+            elevation: 0,
+            color: backgroundColor,
+            textTheme: TextTheme(
+                title: TextStyle(
+              color: primaryColor,
+              fontSize: 28,
+            )),
+            iconTheme: IconThemeData(color: primaryColor),
+            actionsIconTheme: IconThemeData(color: primaryColor, size: 32)),
+        primaryColor: primaryColor,
       ),
       routes: {
         "/": (context) =>
