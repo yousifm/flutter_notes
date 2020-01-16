@@ -14,7 +14,7 @@ class NotesList extends StatelessWidget {
             child: CircularProgressIndicator(),
           )
         : Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.all(8),
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 300),
