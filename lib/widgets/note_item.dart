@@ -19,13 +19,14 @@ class NoteItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Container(
+          margin: EdgeInsets.all(2),
           decoration: BoxDecoration(
             color: Theme.of(context).backgroundColor,
             boxShadow: [
               BoxShadow(
-                  blurRadius: 9, color: Colors.black12, offset: Offset(5, 5)),
+                  blurRadius: 10, color: Colors.black12, offset: Offset(5, 5)),
               BoxShadow(
-                  blurRadius: 9, color: Colors.white38, offset: Offset(-5, -5))
+                  blurRadius: 2, color: Colors.white38, offset: Offset(-4, -4))
             ],
             borderRadius: BorderRadius.circular(5),
           ),
