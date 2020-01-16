@@ -15,8 +15,7 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.of(context)
           .pushNamed(AddNoteScreen.routeName, arguments: note.id),
-      child: Card(
-        elevation: 5,
+      child: Container(
         child: Padding(
           padding:
               const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
@@ -24,6 +23,7 @@ class NoteItem extends StatelessWidget {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Flexible(
+                flex: 3,
                 child: Text(
                   note.title,
                   style: TextStyle(
@@ -32,21 +32,27 @@ class NoteItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.delete),
-                iconSize: 25,
-                color: Colors.grey,
-                alignment: Alignment.centerRight,
-                onPressed: () {
-                  showDialog(
-                          builder: (context) => DeleteDialog(),
-                          context: context)
-                      .then((val) {
-                    if (val)
-                      Provider.of<Notes>(context, listen: false)
-                          .deleteNote(note.id);
-                  });
-                },
+              Flexible(
+                flex: 1,
+                child: Container(
+                  height: 25,
+                  child: IconButton(
+                    padding: EdgeInsets.all(0),
+                    icon: Icon(Icons.delete),
+                    iconSize: 25,
+                    color: Colors.grey,
+                    onPressed: () {
+                      showDialog(
+                              builder: (context) => DeleteDialog(),
+                              context: context)
+                          .then((val) {
+                        if (val)
+                          Provider.of<Notes>(context, listen: false)
+                              .deleteNote(note.id);
+                      });
+                    },
+                  ),
+                ),
               ),
             ]),
             SizedBox(height: 10),
