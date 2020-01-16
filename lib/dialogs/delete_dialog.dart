@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DeleteDialog extends StatelessWidget {
@@ -11,7 +12,16 @@ class DeleteDialog extends StatelessWidget {
       actions: <Widget>[
         FlatButton(
             child: Row(
-              children: <Widget>[Icon(Icons.delete), Text("Yes")],
+              children: <Widget>[
+                Icon(Icons.delete, color: CupertinoColors.destructiveRed),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  "Yes",
+                  style: TextStyle(color: CupertinoColors.destructiveRed),
+                )
+              ],
             ),
             onPressed: () {
               Navigator.of(context, rootNavigator: true).pop(true);
