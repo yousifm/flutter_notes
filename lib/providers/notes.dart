@@ -31,10 +31,12 @@ class Notes with ChangeNotifier {
   bool loading = true;
 
   openDB() async {
+    const query = "CREATE TABLE $table(id TEXT PRIMARY KEY," +
+        "title TEXT, content TEXT, date INTEGER)";
+
     WidgetsFlutterBinding.ensureInitialized();
     database = await openDatabase("notes.db", onCreate: (db, version) {
-      return db.execute(
-          "CREATE TABLE $table(id TEXT PRIMARY KEY, title TEXT, content TEXT, date INTEGER)");
+      return db.execute(query);
     }, version: 1);
   }
 
