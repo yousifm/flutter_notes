@@ -71,12 +71,13 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 5, right: 5),
+              padding: const EdgeInsets.all(8),
               child: Text(
                 note != null
                     ? DateFormat("dd/MM/yy HH:mm").format(note.timeEditted)
                     : "",
-                style: TextStyle(color: Colors.grey, fontSize: 16),
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor, fontSize: 16),
               ),
             ),
             Expanded(
@@ -84,8 +85,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 focusNode: contentFocus,
                 controller: contentController,
                 style: TextStyle(
-                  fontSize: 30,
-                  height: 1,
+                  fontSize: 26,
+                  height: 1.2,
                 ),
                 decoration: InputDecoration(
                   hintStyle: TextStyle(color: CupertinoColors.systemGrey),
