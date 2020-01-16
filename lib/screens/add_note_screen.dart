@@ -77,7 +77,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                     ? DateFormat("dd/MM/yy HH:mm").format(note.timeEditted)
                     : "",
                 style: TextStyle(
-                    color: Theme.of(context).primaryColor, fontSize: 16),
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300),
               ),
             ),
             Expanded(

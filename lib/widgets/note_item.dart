@@ -30,8 +30,7 @@ class NoteItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: Padding(
-            padding:
-                const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
+            padding: const EdgeInsets.all(8),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
