@@ -25,7 +25,7 @@ class NoteItem extends StatelessWidget {
               BoxShadow(
                   blurRadius: 9, color: Colors.black12, offset: Offset(5, 5)),
               BoxShadow(
-                  blurRadius: 9, color: Colors.white70, offset: Offset(-5, -5))
+                  blurRadius: 9, color: Colors.white54, offset: Offset(-5, -5))
             ],
             borderRadius: BorderRadius.circular(5),
           ),
