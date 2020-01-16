@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -53,44 +54,53 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   build(context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: titleController,
-          style: TextStyle(fontSize: 22),
-          readOnly: !editting,
-          decoration: InputDecoration(labelText: "Title"),
-        ),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 5, right: 5),
-            child: Text(
-              note != null
-                  ? DateFormat("dd/MM/yy HH:mm").format(note.timeEditted)
-                  : "",
-              style: TextStyle(color: Colors.grey, fontSize: 16),
-            ),
-          ),
-          Expanded(
-            child: TextField(
-              focusNode: contentFocus,
-              controller: contentController,
+          title: TextField(
+              controller: titleController,
               style: TextStyle(
-                backgroundColor: Colors.white10,
-                fontSize: 30,
-                height: 1,
-              ),
+                  fontSize: 30,
+                  height: 1,
+                  color: Theme.of(context).primaryColor),
               decoration: InputDecoration(
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                  enabled: editting,
+                  hintText: "Title",
+                  hintStyle: TextStyle(color: CupertinoColors.systemGrey),
+                  border: InputBorder.none))),
+      body: Container(
+        color: Theme.of(context).backgroundColor,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 5, right: 5),
+              child: Text(
+                note != null
+                    ? DateFormat("dd/MM/yy HH:mm").format(note.timeEditted)
+                    : "",
+                style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-              readOnly: !editting,
-              keyboardType: TextInputType.multiline,
-              maxLines: 99999,
             ),
-          )
-        ],
-        crossAxisAlignment: CrossAxisAlignment.end,
+            Expanded(
+              child: TextField(
+                focusNode: contentFocus,
+                controller: contentController,
+                style: TextStyle(
+                  fontSize: 30,
+                  height: 1,
+                ),
+                decoration: InputDecoration(
+                  hintStyle: TextStyle(color: CupertinoColors.systemGrey),
+                  hintText: "Body",
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                ),
+                readOnly: !editting,
+                keyboardType: TextInputType.multiline,
+                maxLines: 99999,
+              ),
+            )
+          ],
+          crossAxisAlignment: CrossAxisAlignment.end,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(icon ? Icons.check : Icons.edit),
