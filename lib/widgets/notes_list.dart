@@ -14,10 +14,10 @@ class NotesList extends StatelessWidget {
             child: CircularProgressIndicator(),
           )
         : Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200),
+                    maxCrossAxisExtent: 300),
                 itemCount: notes.length,
                 itemBuilder: (ctx, index) => NoteItem(notes.notes[index])),
           );

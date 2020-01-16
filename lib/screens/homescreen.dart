@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 25,
         title: Text("Notes"),
         actions: <Widget>[
           IconButton(
@@ -23,10 +22,7 @@ class HomeScreen extends StatelessWidget {
                   .pushNamed(AddNoteScreen.routeName, arguments: null);
             },
           ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: PopupMenu(),
-          )
+          PopupMenu(),
         ],
       ),
       body: Container(

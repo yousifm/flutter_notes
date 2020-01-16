@@ -17,7 +17,7 @@ class NoteItem extends StatelessWidget {
       onTap: () => Navigator.of(context)
           .pushNamed(AddNoteScreen.routeName, arguments: note.id),
       child: Padding(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(8),
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).backgroundColor,
