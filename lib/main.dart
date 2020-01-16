@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     final primaryColor = CupertinoColors.activeBlue;
     return MaterialApp(
       theme: ThemeData(
+        fontFamily: 'Montserrat',
         backgroundColor: backgroundColor,
         appBarTheme: AppBarTheme(
             elevation: 0,
