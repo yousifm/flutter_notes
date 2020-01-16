@@ -17,7 +17,7 @@ class NoteItem extends StatelessWidget {
       onTap: () => Navigator.of(context)
           .pushNamed(AddNoteScreen.routeName, arguments: note.id),
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).backgroundColor,
@@ -25,7 +25,7 @@ class NoteItem extends StatelessWidget {
               BoxShadow(
                   blurRadius: 9, color: Colors.black12, offset: Offset(5, 5)),
               BoxShadow(
-                  blurRadius: 9, color: Colors.white54, offset: Offset(-5, -5))
+                  blurRadius: 9, color: Colors.white38, offset: Offset(-5, -5))
             ],
             borderRadius: BorderRadius.circular(5),
           ),
