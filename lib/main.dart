@@ -18,13 +18,14 @@ class MyApp extends StatelessWidget {
     final primaryColor = CupertinoColors.activeBlue;
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Montserrat',
+        fontFamily: 'Lato',
         backgroundColor: backgroundColor,
         appBarTheme: AppBarTheme(
             elevation: 0,
             color: backgroundColor,
             textTheme: TextTheme(
                 title: TextStyle(
+              fontFamily: 'OpenSans',
               color: primaryColor,
               fontSize: 28,
             )),

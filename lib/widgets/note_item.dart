@@ -17,16 +17,16 @@ class NoteItem extends StatelessWidget {
       onTap: () => Navigator.of(context)
           .pushNamed(AddNoteScreen.routeName, arguments: note.id),
       child: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(5),
         child: Container(
           margin: EdgeInsets.all(2),
           decoration: BoxDecoration(
             color: Theme.of(context).backgroundColor,
             boxShadow: [
               BoxShadow(
-                  blurRadius: 8, color: Colors.black12, offset: Offset(5, 5)),
+                  blurRadius: 4, color: Colors.black12, offset: Offset(4, 4)),
               BoxShadow(
-                  blurRadius: 5, color: Colors.white54, offset: Offset(-4, -4))
+                  blurRadius: 4, color: Colors.white38, offset: Offset(-4, -4))
             ],
             borderRadius: BorderRadius.circular(5),
           ),
